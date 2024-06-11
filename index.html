@@ -5,7 +5,7 @@
     <script>
     window.onload = function() {
         // Parse the URL path
-        var path = window.location.pathname;
+        var path = window.location.search;
         var file = path.substr(1);
 
         // Add a basic level of protection against URL code injection
