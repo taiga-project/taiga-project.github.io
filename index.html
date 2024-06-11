@@ -6,13 +6,14 @@
     window.onload = function() {
         // Parse the URL path
         var path = window.location.pathname;
-        var file = path.substr(1); // Change this to match your file type
+        var file = path.substr(1);
 
         // Add a basic level of protection against URL code injection
         file = encodeURIComponent(file);
 
         // Fetch the file from the data repository
-        fetch("https://raw.githubusercontent.com/taiga-project/refs/run/" + file)
+        fetchUrl = "https://raw.githubusercontent.com/taiga-project/refs/run/" + file
+        fetch(fetchUrl)
             .then(response => {
                 if (!response.ok) {
                     throw new Error("HTTP error " + response.status);
@@ -25,6 +26,7 @@
             })
             .catch(error => {
                 // Handle the error
+                document.getELementById("error").textContent = 'Error fetching URL: ' + fetchUrl
                 console.error('Error:', error);
             });
     };
@@ -33,5 +35,6 @@
 <body>
     <h1>Page not found</h1>
     <p id="content"></p>
+    <p id="error"></p>
 </body>
 </html>
