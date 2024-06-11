@@ -13,8 +13,8 @@
 
         // Fetch the file from the data repository
         fetchUrl = "https://raw.githubusercontent.com/taiga-project/refs/run/" + file;
-        document.getElementById("error").textContent = 'Error fetching URL: ' + fetchUrl;
-        /*fetch(fetchUrl)
+
+        fetch(fetchUrl)
             .then(response => {
                 if (!response.ok) {
                     throw new Error("HTTP error " + response.status);
@@ -27,15 +27,13 @@
             })
             .catch(error => {
                 // Handle the error
-                document.getELementById("error").textContent = 'Error fetching URL: ' + fetchUrl
                 console.error('Error:', error);
-            });*/
+            });
     };
     </script>
 </head>
 <body>
     <h1>Page not found</h1>
     <p id="content"></p>
-    <p id="error"></p>
 </body>
 </html>
