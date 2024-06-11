@@ -13,7 +13,7 @@
 
         // Fetch the file from the data repository
         fetchUrl = "https://raw.githubusercontent.com/taiga-project/refs/run/" + file;
-        document.getELementById("error").textContent = 'Error fetching URL: ' + fetchUrl;
+        document.getElementById("error").textContent = 'Error fetching URL: ' + fetchUrl;
         /*fetch(fetchUrl)
             .then(response => {
                 if (!response.ok) {
