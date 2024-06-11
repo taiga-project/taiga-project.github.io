@@ -6,7 +6,7 @@
     window.onload = function() {
         // Parse the URL path
         var path = window.location.pathname;
-        var file = path.substr(1) + ".txt"; // Change this to match your file type
+        var file = path.substr(1); // Change this to match your file type
 
         // Add a basic level of protection against URL code injection
         file = encodeURIComponent(file);
